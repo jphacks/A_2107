@@ -1,3 +1,7 @@
+/*他のページとの色味違くて迷ってる*/
+
+
+
 * {
     padding: 0;
     margin: 0;
@@ -5,10 +9,54 @@
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 70px;
+    color: #FFF3E2;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 60px;
+    text-align: center;
+}
+
+body {
+    background-color: #706897;
+}
+
+h3 {
+    color: #FFF3E2;
+}
+
+.tag_name {
+    color: #F29191;
+    width: 80px;
+}
+
+.tag_link {
+    text-decoration: none;
+    font-size: 20px;
+    width: fit-content;
+    display: block;
+}
+
+.tag_link:hover {
+    text-decoration: underline;
+    text-decoration-color: #f57979;
+    text-decoration-thickness: 2px;
+    transition: all .1s 0s ease;
 }
 
 .input-group {
     width: 300px;
-    margin: 0 auto;
+    height: 80px;
+}
+
+
+.search {
+    width: 400px;
+    height: 45px;
+    border-radius: 30px;
+    padding-left: 10px;
+    font-size: 17px;
+}
+
+h3 {
+    text-align: center;
 }
