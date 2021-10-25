@@ -4,7 +4,7 @@ $(()=>{
     }
     $(".signUp").click(()=>{
         if(!def().mail || !def().pass || !def().username){
-            console.log("記述エラー")
+            alert("記述エラー")
             return false
         }
         signUpWithEmailPassword(def().mail,def().pass)
@@ -13,7 +13,7 @@ $(()=>{
     })
     $(".signIn").click(()=>{
         if(!$('#mail').val() || !$('#pass').val()){
-            console.log("記述エラー")
+            alert("記述エラー")
             return false
         }
         signInWithEmailPassword(def().mail,def().pass)

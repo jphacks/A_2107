@@ -4,12 +4,12 @@ function signInWithEmailPassword(email,password) {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
         var user = userCredential.user;
-        console.log(user)
+        alert(user)
     })
     .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorCode,errorMessage)
+        alert(errorCode,errorMessage)
     });
 }
 
@@ -19,12 +19,12 @@ function signUpWithEmailPassword(email,password) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
         var user = userCredential.user;
-        console.log(user)
+        alert(user)
     })
     .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorCode,errorMessage)
+        alert(errorCode,errorMessage)
     });
 }
 
@@ -32,9 +32,9 @@ function authStateListener() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             var uid = user.uid;
-            console.log(uid)
+            alert(uid)
         } else {
-            console.log('ログインされている状態にありません')
+            alert('ログインされている状態にありません')
         }
     });
 }
@@ -42,7 +42,7 @@ function authStateListener() {
 function signOut() {
     firebase.auth().signOut().then(() => {
     }).catch((error) => {
-        console.log('ログインされている状態にありません')
+        alert('ログインされている状態にありません')
     });
 }
 
@@ -59,17 +59,13 @@ function getUserProfile() {
     if (user !== null) {
         const displayName = user.displayName;
         const email = user.email;
-        console.log(displayName)
-        console.log(email)
+        alert(displayName)
+        alert(email)
     }
 }
 
 function sendEmailVerification() {
-    // [START auth_send_email_verification]
     firebase.auth().currentUser.sendEmailVerification()
     .then(() => {
-        // Email verification sent!
-        // ...
     });
-    // [END auth_send_email_verification]
 }  
