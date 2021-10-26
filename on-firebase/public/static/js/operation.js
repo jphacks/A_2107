@@ -4,12 +4,12 @@ function signInWithEmailPassword(email,password) {
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
         var user = userCredential.user;
-        alert(user)
+        alert("サインインできました")
     })
     .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert(errorCode,errorMessage)
+        alert("メールアドレスか、パスワードが間違っています。")
     });
 }
 
@@ -19,7 +19,7 @@ function signUpWithEmailPassword(email,password) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
         var user = userCredential.user;
-        alert(user)
+        console.log(user)
     })
     .catch((error) => {
         var errorCode = error.code;
@@ -31,10 +31,10 @@ function signUpWithEmailPassword(email,password) {
 function authStateListener() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
-            var uid = user.uid;
-            alert(uid)
+            var uid= user.uid;
+            return uid
         } else {
-            alert('ログインされている状態にありません')
+            return "ログインされている状態にありません"
         }
     });
 }
@@ -45,22 +45,25 @@ function signOut() {
         alert('ログインされている状態にありません')
     });
 }
-
 function updateUserProfile(displayName) {
     const user = firebase.auth().currentUser;
     user.updateProfile({
         displayName: displayName,
     }).then(() => {
     }).catch((error) => {
+        console.log("error")
     });
 }
 function getUserProfile() {
     const user = firebase.auth().currentUser;
     if (user !== null) {
         const displayName = user.displayName;
-        const email = user.email;
-        alert(displayName)
-        alert(email)
+        // const email = user.email;
+        // alert(displayName)
+        // alert(email)
+        return displayName
+    }else{
+        return null
     }
 }
 
