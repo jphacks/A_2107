@@ -4,7 +4,7 @@ $(()=>{
     .then((querySnapshot) => {
         var list=[]
         querySnapshot.forEach((doc) => {
-            list.push(doc.data().tag)
+            list.push(doc.data().tag1)
             if(doc.data().tag2 !== undefined){
                 list.push(doc.data().tag2)
             }

@@ -13,6 +13,14 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
+    {% for i in list %}
+    <div>
+        <p class="title">{{ i["title"] }}</p>
+        <p class="time">{{ i["time"] }}</p>
+        <p class="sentence">{{ i["sentence"] }}</p>
+        <p class="tag">{{ i["tag"] }}</p>
+    </div>
+    {% endfor %}
     <script src="../static/js/userpage.js"></script>
 </body>
 </html>

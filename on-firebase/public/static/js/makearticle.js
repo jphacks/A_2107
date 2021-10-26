@@ -25,6 +25,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: uid,
+                tag:def().tag,
                 tag1: def().tag,
                 sentence:def().sentence,
                 time:date2
@@ -33,6 +34,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: uid,
+                tag:def().tag,
                 tag1: tags[0],
                 tag2: tags[1],
                 sentence:def().sentence,
@@ -42,6 +44,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: uid,
+                tag:def().tag,
                 tag1: tags[0],
                 tag2: tags[1],
                 tag3: tags[2],
@@ -52,6 +55,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: uid,
+                tag:def().tag,
                 tag1: tags[0],
                 tag2: tags[1],
                 tag3: tags[2],
@@ -63,6 +67,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: uid,
+                tag:def().tag,
                 tag1: tags[0],
                 tag2: tags[1],
                 tag3: tags[2],
