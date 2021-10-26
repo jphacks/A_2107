@@ -45,6 +45,7 @@ function signOut() {
         alert('ログインされている状態にありません')
     });
 }
+
 function updateUserProfile(displayName) {
     const user = firebase.auth().currentUser;
     user.updateProfile({
@@ -54,6 +55,7 @@ function updateUserProfile(displayName) {
         console.log("error")
     });
 }
+
 function getUserProfile() {
     const user = firebase.auth().currentUser;
     if (user !== null) {

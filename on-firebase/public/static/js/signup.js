@@ -8,6 +8,14 @@ $(()=>{
             return false
         }
         signUpWithEmailPassword(def().mail,def().pass)
+        setTimeout(() => {
+            firebase.auth().onAuthStateChanged((user) => {
+                uid= user.uid;
+                db.collection("users").doc(uid).set({
+                    username:def().username
+                })
+            })
+        }, 100);
         sendEmailVerification()
     })
 })

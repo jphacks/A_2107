@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -15,8 +15,21 @@
 <body>
     <input type="text" id="title" placeholder="title">
     <input type="text" id="tag" placeholder="tags">
+    <input type="text" id="term" placeholder="期間">
     <textarea name="" id="sentence" cols="30" rows="10"></textarea>
     <button class="btn complate">投稿</button>
     <script src="../static/js/makearticle.js"></script>
 </body>
-</html>
+</html> -->
+
+{% extends "base.html" %}
+{% block content %}
+<main>
+    <input type="text" id="title" placeholder="title">
+    <input type="text" id="tag" placeholder="tags">
+    <input type="text" id="term" placeholder="期間">
+    <textarea name="" id="sentence" cols="30" rows="10"></textarea>
+    <button class="btn complate">投稿</button>
+</main>
+<script src="../static/js/makearticle.js"></script>
+{% endblock %}

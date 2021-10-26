@@ -31,7 +31,7 @@ $(()=>{
         var a=0
         listed.forEach((i)=>{
             $(".tags").append(
-                `<a class="tag_link" href="serch/${i}"><div class="tag_name">#${i}(${countListed[a]}件)</div></a>`
+                `<a href="/search/${i}"><p>#${i}(${countListed[a]}件)</p></a>`
             )
             a++
         })

@@ -19,23 +19,23 @@ def signin():
     html=render_template("signin.html")
     return html
 
-@app.route("/userpage/<uid>")
-def userpage(uid):
+@app.route("/userpage/<username>")
+def userpage(username):
     list=[]
-    docs =db.collection("article").where('username', '==', uid).stream()
+    docs =db.collection("article").where('username', '==', username).stream()
     for doc in docs:
         list.append(doc.to_dict())
-    html=render_template("serchtag.html",list=list)
+    html=render_template("userpage.html",list=list)
     return html
 
-@app.route("/serch/<content>")
-def serchtag(content):
+@app.route("/search/<content>")
+def searchtag(content):
     list=[]
     for i in range(5):
         docs =db.collection("article").where(f'tag{str(i+1)}', '==', content).stream()
         for doc in docs:
             list.append(doc.to_dict())
-    html=render_template("serchtag.html",list=list)
+    html=render_template("searchtag.html",list=list)
     return html
 
 @app.route("/makearticle")
@@ -43,6 +43,11 @@ def makearticle():
     html=render_template("makearticle.html")
     return html
 
+@app.route("/index")
+def index():
+    title="index"
+    html=render_template("index.html",title=title)
+    return html
 
 if __name__ == "__main__":
     app.run(debug=True)
