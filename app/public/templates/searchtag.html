@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -22,4 +22,20 @@
     </div>
     {% endfor %}
 </body>
-</html>
+</html> -->
+
+{% extends "base.html" %}
+{% block content %}
+<main>
+    <!-- {% for i in list %}
+    <div>
+        <p class="title">{{ i["title"] }}</p>
+        <p class="time">{{ i["time"] }}</p>
+        <p class="term">{{ i["term"] }}</p>
+        <p class="sentence">{{ i["sentence"] }}</p>
+        <p class="tag">{{ i["tag"] }}</p>
+    </div>
+    {% endfor %} -->
+</main>
+<script src="../static/js/searchtag.js"></script>
+{% endblock %}

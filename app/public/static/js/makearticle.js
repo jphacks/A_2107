@@ -2,12 +2,13 @@ $(()=>{
     def=()=>{
         return {tag:$("#tag").val(),title:$('#title').val(),term:$("#term").val(),sentence:$('#sentence').val()}
     }
-    var uid,username;
+    var uid,username,points;
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
             uid= user.uid;
             db.collection("users").doc(uid).get().then((doc) => {
                 username=doc.data().username;
+                points=doc.data().points;
             })
         } else {
             alert("ログインしてから投稿をお願いします。")
@@ -28,6 +29,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: username,
+                points:points,
                 tag:def().tag,
                 tag1: def().tag,
                 term:def().term,
@@ -41,6 +43,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: username,
+                points:points,
                 tag:def().tag,
                 tag1: tags[0],
                 tag2: tags[1],
@@ -55,6 +58,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: username,
+                points:points,
                 tag:def().tag,
                 tag1: tags[0],
                 tag2: tags[1],
@@ -70,6 +74,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: username,
+                points:points,
                 tag:def().tag,
                 tag1: tags[0],
                 tag2: tags[1],
@@ -86,6 +91,7 @@ $(()=>{
             db.collection("article").add({
                 title:def().title,
                 username: username,
+                points:points,
                 tag:def().tag,
                 tag1: tags[0],
                 tag2: tags[1],
