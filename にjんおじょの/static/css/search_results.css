@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    background-color: cornsilk;
+}
+
+.search-group {
+    display: inline-block;
+    width: fit-content;
+    height: 35px;
+    margin: 15px;
+}
+
+.search {
+    width: 200px;
+    height: 35px;
+    padding-left: 8px;
+    border: 1.5px blue solid;
+}
+
+.input-group-btn .btn {
+    height: 35px;
+    width: 35px;
+}
+
+.logo {
+    font-size: 27px;
+    color: orange;
+    font-family: 'Irish Grover', cursive;    padding-top: 60px;
+    text-align: center;
+    text-shadow: 3px 3px 3px #ddd;
+
+}
