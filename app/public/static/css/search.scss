@@ -1,0 +1,70 @@
+
+body{
+    background-color: rgb(250,250,250);
+}
+.cover{
+    height: 7vh;
+}
+header{
+    .signin {
+        width: fit-content;
+        display: inline-block;
+        font-size: 15px;
+        color: #0a7ec7;
+        padding: 0.3em 1em;
+        border: solid 2px #0a7ec7;
+        border-radius: 3px;
+        transition: .4s;
+        position: absolute;
+        top: 0;
+        right:17vw;
+        margin: 15px;
+        background-color: white;
+    }
+    
+    .signin:hover {
+        background-color: #0a7ec7;
+        color: white;
+    }
+    
+    .signup {
+        width: fit-content;
+        display: inline-block;
+        font-size: 15px;
+        color: #581ce4;
+        padding: 0.3em 1em;
+        border: solid 2px #581ce4;
+        border-radius: 3px;
+        transition: .4s;
+        position: absolute;
+        top: 0;
+        right: 23vw;
+        margin: 15px;
+        background-color: white;
+    }
+    
+    .signup:hover {
+        background-color: #581ce4;
+        color: white;
+    }
+}
+main{
+    width: 40vw;
+    margin: 0 auto;
+    padding-top: 3vh;
+    padding-bottom: 90vh;
+    background-color: white;
+    .article{
+        h2{
+            color: black;
+        }
+        p{
+            color: black;
+        }
+        .time{
+            color: gray;
+        }
+        padding: 15px;
+        border-bottom: solid 1px gray;
+    }
+}

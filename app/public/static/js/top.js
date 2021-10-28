@@ -50,7 +50,7 @@ $(()=>{
         setTimeout(() => {
             var b=0
             sortList.forEach((i)=>{
-                if(b<9){
+                if(b<7){
                     $(".tags").append(
                         `<a href="/search/${i.tag}"><p class="content_tag">#${i.tag}(${String(i.count)}件)</p></a>`
                     )
@@ -61,5 +61,20 @@ $(()=>{
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
+    });
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            uid= user.uid;
+            db.collection("users").doc(uid).get().then((doc) => {
+                var username=doc.data().username;
+                $("header").append(
+                    `<a href="/userpage/${username}"><i class="account fas fa-user-circle fa-3x"></i></a>`
+                )
+            })
+        }else{
+            $("header").append(
+                `<a href="/signup"><i class="account fas fa-user-circle fa-3x"></i></a>`
+            )
+        }
     });
 })

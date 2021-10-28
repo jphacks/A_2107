@@ -1,4 +1,5 @@
 from flask import Flask,render_template
+from werkzeug.utils import HTMLBuilder
 import firebase
 db=firebase.initialize()
 
@@ -39,21 +40,14 @@ def userpage(username):
 @app.route("/search/<content>")
 def searchtag(content):
     title="＃検索"
-
-    # list=[]
-    # for i in range(5):
-    #     docs =db.collection("article").where(f'tag{str(i+1)}', '==', content).stream()
-    #     for doc in docs:
-            # list.append(doc.to_dict())
-    html=render_template("searchtag.html",
-    # list=list,
-    title=title)
+    html=render_template("searchtag.html",title=title)
     return html
 
 @app.route("/makearticle")
 def makearticle():
     title="投稿"
-    html=render_template("makearticle.html",title=title)
+    sign=False
+    html=render_template("makearticle.html",title=title,sign=sign)
     return html
 
 @app.route("/index")
@@ -61,6 +55,22 @@ def index():
     title="index"
     html=render_template("index.html",title=title)
     return html
+
+@app.route("/fitway")
+def fitway():
+    title="fitWayについて"
+    html=render_template("about_fitWay.html",title=title)
+    return html
+
+@app.route("/article/<articleID>")
+def article(articleID):
+    title="記事"
+    doc =db.collection("article").document(articleID).get()
+    if doc.exists:
+        article=doc.to_dict()
+    html=render_template("article.html",title=title,article=article)
+    return html
+
 
 if __name__ == "__main__":
     app.run(debug=True)

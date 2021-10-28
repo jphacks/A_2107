@@ -1,11 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
-<link rel="stylesheet" href="../static/css/makearticle.css">
+<link rel="stylesheet" href="../static/css/signup.css">
 <main>
-    <input type="text" id="title" placeholder="title">
-    <input type="text" id="tag" placeholder="tags">
-    <input type="text" id="term" placeholder="期間">
-    <textarea name="" id="sentence" cols="30" rows="10"></textarea>
+    <h1>投稿：記事の充実にご協力ください</h1>
+    <div class="question">
+        <p>タイトル</p>
+        <div class="choice">
+            <input type="text" id="title" placeholder="title">
+        </div>
+    </div>
+    <div class="question">
+        <p>タグ　　　<span style="font-size: 15px; float: none;">(※5個まで登録できます。それぞれ半角スペースで区切って下さい。)</span></p>
+        <div class="choice">
+            <input type="text" id="tag" placeholder="tags">
+        </div>
+    </div>
+    <div class="question">
+        <p>期間</p>
+        <div class="choice">
+            <input type="text" id="term" placeholder="term">
+        </div>
+    </div>
+    <div class="question textbox">
+        <p>記事</p>
+        <div class="choice">
+            <textarea name="" id="sentence" cols="30" rows="10" placeholder="article"></textarea>
+        </div>
+    </div>
     <button class="btn complate">投稿</button>
 </main>
 <script src="../static/js/makearticle.js"></script>

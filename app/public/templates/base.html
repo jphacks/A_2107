@@ -10,13 +10,20 @@
   <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth-compat.js"></script>
   <script src="../static/js/config.js"></script>
   <script src='../static/js/operation.js'></script>
-
   <script src="https://kit.fontawesome.com/57858b7288.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
+<script>
+  firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+        }else{
+          $(".post").hide()
+        }
+    });
+</script>
 <body>
   {% if page!="top" %}
   <link rel="stylesheet" href="../static/css/header.css">
@@ -24,7 +31,7 @@
     <a class="logo" href="/">fitWay</a>
     <div class="search-group">
       {% if sign!=False %}
-      <a href="/makearticle"><p>投稿をする</p></a>
+      <a class="post" href="/makearticle"><p>投稿</p></a>
       {% endif %}
         <input type="search" class="search" placeholder="#で検索 または @で人を検索">
         <span class="input-group-btn">
@@ -38,6 +45,6 @@
   {% block content %}
   {% endblock %}
 
-  <div class="cover"></div>
+  <!-- <div class="cover"></div> -->
 </body>
 </html>

@@ -10,7 +10,10 @@ $(()=>{
             db.collection("article").where(i,"==",tagName).get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    list.push(doc.data());
+                    var data=doc.data()
+                    data.articleID=doc.id
+                    console.log(data)
+                    list.push(data);
                 });
             })
         })
@@ -43,14 +46,86 @@ $(()=>{
                     }else{
                         match="90％以上です"
                     }
+                    var figure=i.sentence.split("")
+                    var sentence=""
+                    for(let a=0;a<20;a++){
+                        if(figure[a]!=undefined){
+                            sentence+=figure[a]
+                        }
+                    }
+                    if(figure.length>20){
+                        var d="・・・"
+                    }else{
+                        var d=""
+                    }
                     $("main").append(
-                        `<div>
-                        <p>${i.title}</p>
-                        <p>${i.time}</p>
-                        <p>${i.term}</p>
-                        <p>${i.sentence}</p>
+                        
+                        `<div class="article">
+                        <a href="/userpage/${i.username}"><p>@${i.username}</p></a>
+                        <a href="/article/${i.articleID}"><h2>${i.title}</h2></a>
+                        <p class="time">${i.time}</p>
+                        <p>期間）${i.term}</p>
+                        <p class="sentence">${sentence}${d}</p>
                         <p>${i.tag}</p>
                         <p>性格の一致度は、<span style="color:red">${match}</span>。</p>
+                        </div>`
+                    )
+                }) 
+            }, 100);
+        }, 300);
+    }
+    pageShowOther=()=>{
+        list=[]
+        tagList=["tag1","tag2","tag3","tag4","tag5"]
+        tagList.forEach((i)=>{
+            db.collection("article").where(i,"==",tagName).get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    var data=doc.data()
+                    data.articleID=doc.id
+                    console.log(data)
+                    list.push(data);
+                });
+            })
+        })
+        $("header").append(
+            `
+            <a class="signup" href="/signup">Sign Up</a>
+            <a class="signin" href="/signin">Sign In</a>`
+        )
+        $("main").append(
+            `<h3 style="margin:0 1vw">サインアップ、サインインするとあなたの性格とマッチする記事が順番に表示されます。</h3>`
+        )
+        setTimeout(() => {
+            list.sort(function(a, b) {
+                if (a.time < b.time) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            })
+            setTimeout(() => {
+                list.forEach((i)=>{
+                    var figure=i.sentence.split("")
+                    var sentence=""
+                    for(let a=0;a<20;a++){
+                        if(figure[a]!=undefined){
+                            sentence+=figure[a]
+                        }
+                    }
+                    if(figure.length>20){
+                        var d="・・・"
+                    }else{
+                        var d=""
+                    }
+                    $("main").append(
+                        `<div class="article">
+                        <a href="/userpage/${i.username}"><p>@${i.username}</p></a>
+                        <a href="/article/${i.articleID}"><h2>${i.title}</h2></a>
+                        <p class="time">${i.time}</p>
+                        <p>期間）${i.term}</p>
+                        <p class="sentence">${sentence}${d}</p>
+                        <p>${i.tag}</p>
                         </div>`
                     )
                 }) 
@@ -66,6 +141,8 @@ $(()=>{
                     pageShow(points)
                 }, 100);
             })
+        }else{
+            pageShowOther()
         }
     });
 })

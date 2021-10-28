@@ -1,27 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="account">
-    <img class="profile_img" src="#">
-    <span class="user_name"></span>
-    <div class="tag_group">
-        {% for i in list %}
-        {% for j in array %}
-        {% if i[j] %}
-        <p>#{{ i[j] }}<p>
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/userpage.css">
+<main>
+    <div class="account">
+        <p class="user_name"></p>
+        <h3 class="subtitle_1">今までに使ったタグ</h3>
+        <div class="tag_group">
+            {% for i in list %}
+            {% for j in array %}
+            {% if i[j] %}
+            <a href="/search/{{ i[j] }}"><p class="content_tag">#{{ i[j] }}<p></a>
+            {% endif %}
+            {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>
-{% for i in list %}
-<div class="article">
-    <p class="title">{{ i["title"] }}</p>
-    <p class="time">{{ i["time"] }}</p>
-    <p class="term">{{ i["term"] }}</p>
-    <p class="sentence">{{ i["sentence"] }}</p>
-    <p class="tag">{{ i["tag"] }}</p>
-</div>
-{% endfor %}
+    <div class="articleiroduke">
+        <h3 class="subtitle_2">今までの投稿</h3>
+        <div class="article_group">
+            {% for i in list %}
+            <div class="article">
+                <p class="title">{{ i["title"] }}</p>
+                <p class="time">{{ i["time"] }}</p>
+                <p class="tags">
+                {% if i["tag1"] %}
+                <a href='/search/{{i["tag1"]}}'><span class="tag">#{{ i["tag1"] }}</span></a>
+                {% endif %}
+                {% if i["tag2"] %}
+                <a href='/search/{{i["tag2"]}}'><span class="tag">#{{ i["tag2"] }}</span></a>
+                {% endif %}
+                {% if i["tag3"] %}
+                <a href='/search/{{i["tag3"]}}'><span class="tag">#{{ i["tag3"] }}</span></a>
+                {% endif %}
+                {% if i["tag4"] %}
+                <a href='/search/{{i["tag4"]}}'><span class="tag">#{{ i["tag4"] }}</span></a>
+                {% endif %}
+                {% if i["tag5"] %}
+                <a href='/search/{{i["tag5"]}}'><span class="tag">#{{ i["tag5"] }}</span></a>
+                {% endif %}
+                </p>
+                <p class="term">期間 )  {{ i["term"] }}</p>
+                <p class="sentence">{{ i["sentence"] }}</p>
+            </div>    
+            {% endfor %}
+        </div>
+    </div>
+</main>
 <script src="../static/js/userpage.js"></script>
 
 {% endblock %}
