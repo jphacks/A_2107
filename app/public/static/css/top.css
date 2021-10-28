@@ -1,7 +1,3 @@
-/*他のページとの色味違くて迷ってる*/
-
-
-
 * {
     padding: 0;
     margin: 0;
@@ -13,14 +9,72 @@ html {
     height: 100%;
 }
 
+body {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 100%;
+    height: fit-content;
+}
+
+.about_fitWay {
+    color: #2080F5;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: fit-content;
+    display: inline-block;
+    margin: 15px;
+}
+
+.about_fitWay:hover {
+    opacity: .6;
+    transition: all .3s 0s ease;
+}
+
+.timeline {
+    width: fit-content;
+    display: inline-block;
+    font-size: 15px;
+    color: #0a7ec7;
+    padding: 0.3em 1em;
+    border: solid 2px #0a7ec7;
+    border-radius: 3px;
+    transition: .4s;
+    position: absolute;
+    top: 0;
+    right: 70px;
+    margin: 15px;
+}
+
+.timeline:hover {
+    background-color: #0a7ec7;
+    color: white;
+}
+ 
+#account {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
 
 h1 {
     font-size: 70px;
     color: orange;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-top: 60px;
+    font-family: 'Irish Grover', cursive;    padding-top: 60px;
     padding-bottom: 80px;
     text-align: center;
+    text-shadow: 3px 3px 3px #ddd;
 }
 
 body {
@@ -35,14 +89,18 @@ h3 {
 }
 
 .tags {
-    width: fit-content;
+    width: 70vw;
     height: fit-content;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    padding-top: 50px;
 }
 
 .tag_name {
     color: #2080F5;
-    width: 80px;
+    width: fit-content;
+    margin: 10px;
 }
 
 .tag_link {
@@ -88,7 +146,16 @@ h3 {
 .search-group .btn {
     width: 45px;
     height: 45px;
+    background-color: #d9eaff;
+    border: 1.5px rgb(105, 105, 105) solid;
 }
+
+.search-group .btn:hover {
+    background-color: rgba(0, 119, 255, 0.603);
+    transition: all .25s 0s ease;
+    cursor: pointer;
+}
+
 
 h3 {
     text-align: center;

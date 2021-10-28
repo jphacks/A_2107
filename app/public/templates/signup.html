@@ -1,98 +1,95 @@
-<!-- <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth-compat.js"></script>
-  <script src="../static/js/config.js"></script>
-  <script src='../static/js/operation.js'></script>
-  <link rel="stylesheet" href="../static/css/signup.css">
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-</head>
-<body>
-  <input type="text" id='mail' placeholder="mail">
-  <input type="password" id='pass' placeholder="password">
-  <input type="text" id="username" placeholder="username">
-  <form name="example">
-    <input type="radio" name="user-select" value="1" checked>1
-    <input type="radio" name="user-select" value="2">2
-    <input type="radio" name="user-select" value="3">3
-  </form>
-  <form name="example">
-    <input type="radio" name="user-select" value="1" checked>1
-    <input type="radio" name="user-select" value="2">2
-    <input type="radio" name="user-select" value="3">3
-  </form>
-  <button class="btn signUp">サインアップ</button>
-  <script src="../static/js/signup.js"></script>
-</body>
-</html> -->
-
 {% extends "base.html" %}
 {% block content %}
+<link rel="stylesheet" href="../static/css/signup.css">
 <main>
-  <input type="text" id='mail' placeholder="mail">
-  <input type="password" id='pass' placeholder="password">
-  <input type="text" id="username" placeholder="username">
-    <div>
-      <label for="question-1">家の中の物の配置を決めないと気が済まない</label>
-    <input type="radio" name="question-1" value="1">そう思う
-    <input type="radio" name="question-1" value="0">どちらとも言えない
-    <input type="radio" name="question-1" value="-1">そう思わない
+    <h1>SignUp</h1>
+    <h2>基本情報</h2>
+  <div class="question">
+    <p>メールアドレス</p>
+    <div class="choice">
+      <input type="text" id='mail' placeholder="mail">
     </div>
-    <div>
-      <label for="question-2">平日寝る時間が一緒</label>
-    <input type="radio" name="question-2" value="1">そう思う
-    <input type="radio" name="question-2" value="0">どちらとも言えない
-    <input type="radio" name="question-2" value="-1">そう思わない
+  </div>
+  <div class="question">
+    <p>パスワード</p>
+    <div class="choice">
+      <input type="password" id='pass' placeholder="password">
     </div>
-    <div>
-      <label for="question-3">たくさんの趣味を持っている</label>
-    <input type="radio" name="question-3" value="1">そう思う
-    <input type="radio" name="question-3" value="0">どちらとも言えない
-    <input type="radio" name="question-3" value="-1">そう思わない
+  </div>
+  <div class="question">
+    <p>ユーザーネーム</p>
+    <div class="choice">
+      <input type="text" id="username" placeholder="username">
     </div>
-    <div>
-      <label for="question-4">こだわりが強いと思う</label>
-    <input type="radio" name="question-4" value="2">そう思う
-    <input type="radio" name="question-4" value="0">どちらとも言えない
-    <input type="radio" name="question-4" value="-2">そう思わない
+  </div>
+  <h2 class="h2">アンケート(※必ず答える必要があります)</h2>
+    <div class="question"><label for="question-1"><p>家の中の物の配置を決めないと気が済まない</p></label>
+      <div class="choice">
+        <input type="radio" name="question-1" value="1"><span>そう思う</span>
+        <input type="radio" name="question-1" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-1" value="-1"><span>そう思わない</span>
+      </div>
+      </div>
+      
+      <div class="question"><label for="question-2"><p>平日寝る時間が一緒</p></label>
+      <div class="choice">
+        <input type="radio" name="question-2" value="1"><span>そう思う</span>
+        <input type="radio" name="question-2" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-2" value="-1"><span>そう思わない</span>
+      </div>
+      </div>
+      
+      <div class="question"><label for="question-3"><p>たくさんの趣味を持っている</p></label>
+      <div class="choice">
+        <input type="radio" name="question-3" value="1"><span>そう思う</span>
+        <input type="radio" name="question-3" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-3" value="-1"><span>そう思わない</span>
+      </div>
+      </div>
+      
+      <div class="question"><label for="question-4"><p>こだわりが強いと思う</p></label>
+      <div class="choice">
+        <input type="radio" name="question-4" value="2"><span>そう思う</span>
+        <input type="radio" name="question-4" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-4" value="-2"><span>そう思わない</span>
+      </div>
     </div>
-    <div>
-      <label for="question-5">用事がある時に準備を忘れない</label>
-    <input type="radio" name="question-5" value="2">そう思う
-    <input type="radio" name="question-5" value="0">どちらとも言えない
-    <input type="radio" name="question-5" value="-2">そう思わない
+      <div class="question"><label for="question-5"><p>用事がある時に準備を忘れない</p></label>
+      <div class="choice">
+        <input type="radio" name="question-5" value="2"><span>そう思う</span>
+        <input type="radio" name="question-5" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-5" value="-2"><span>そう思わない</span>
+      </div>
     </div>
-    <div>
-      <label for="question-6">一つのことにハマらない</label>
-    <input type="radio" name="question-6" value="2">そう思う
-    <input type="radio" name="question-6" value="0">どちらとも言えない
-    <input type="radio" name="question-6" value="-2">そう思わない
+      <div class="question"><label for="question-6"><p>一つのことにハマらない</p></label>
+      <div class="choice">
+        <input type="radio" name="question-6" value="2"><span>そう思う</span>
+        <input type="radio" name="question-6" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-6" value="-2"><span>そう思わない</span>
+      </div>
     </div>
-    <div>
-      <label for="question-7">カップラーメンはきっちり時間を測って食べる</label>
-    <input type="radio" name="question-7" value="1">そう思う
-    <input type="radio" name="question-7" value="0">どちらとも言えない
-    <input type="radio" name="question-7" value="-1">そう思わない
+      <div class="question"><label for="question-7"><p>カップラーメンはきっちり時間を測って食べる</p></label>
+      <div class="choice">
+        <input type="radio" name="question-7" value="1"><span>そう思う</span>
+        <input type="radio" name="question-7" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-7" value="-1"><span>そう思わない</span>
+      </div>
     </div>
-    <div>
-      <label for="question-8">ゴミは分別して捨てる</label>
-    <input type="radio" name="question-8" value="1">そう思う
-    <input type="radio" name="question-8" value="0">どちらとも言えない
-    <input type="radio" name="question-8" value="-1">そう思わない
+      <div class="question"><label for="question-8"><p>ゴミは分別して捨てる</p></label>
+      <div class="choice">
+        <input type="radio" name="question-8" value="1"><span>そう思う</span>
+        <input type="radio" name="question-8" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-8" value="-1"><span>そう思わない</span>
+      </div>
     </div>
-    <div>
-      <label for="question-9">作業中にスマホを触りたくなる</label>
-    <input type="radio" name="question-9" value="1">そう思う
-    <input type="radio" name="question-9" value="0">どちらとも言えない
-    <input type="radio" name="question-9" value="-1">そう思わない
-    </div>
-  <button class="btn signUp">サインアップ</button>
+      <div class="question"><label for="question-9"><p>作業中にスマホを触りたくなる</p></label>
+      <div class="choice">
+        <input type="radio" name="question-9" value="1"><span>そう思う</span>
+        <input type="radio" name="question-9" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-9" value="-1"><span>そう思わない</span>
+      </div>
+  </div>
+  <div class="btn signUp">サインアップ</div>
 </main>
 <script src="../static/js/signup.js"></script>
 {% endblock %}
