@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -25,8 +25,8 @@ html body main {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 html body main #title {
@@ -47,5 +47,10 @@ html body main #sentence {
 
 html body main .btn {
   display: inline-block;
+}
+
+html body main .btn:hover {
+  opacity: .5;
+  transition: all .1s 0s ease;
 }
 /*# sourceMappingURL=makearticle.css.map */

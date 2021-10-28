@@ -2,6 +2,7 @@ from flask import Flask,render_template
 from werkzeug.utils import HTMLBuilder
 import firebase
 db=firebase.initialize()
+import pprint
 
 app = Flask(__name__)
 
@@ -34,6 +35,7 @@ def userpage(username):
     docs =db.collection("article").where('username', '==', username).stream()
     for doc in docs:
         list.append(doc.to_dict())
+    list=sorted(list, key=lambda x: x['time'],reverse=True)
     html=render_template("userpage.html",list=list,title=title,array=array)
     return html
 

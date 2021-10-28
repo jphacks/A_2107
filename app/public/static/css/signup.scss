@@ -47,6 +47,7 @@ main{
         margin: 0 auto;
         width: 10vw;
         text-align: center;
+        // cursor: help;
   color: #fff;
   background-color: #eb6100;
   border-radius: 10px;
@@ -55,5 +56,6 @@ main{
 .btn:hover {
   color: #fff;
   background: #f56500;
+  cursor: pointer;
 }
 }

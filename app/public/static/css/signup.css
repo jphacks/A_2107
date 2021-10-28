@@ -67,5 +67,6 @@ main .btn:hover,
 main .btn:hover {
   color: #fff;
   background: #f56500;
+  cursor: pointer;
 }
 /*# sourceMappingURL=signup.css.map */

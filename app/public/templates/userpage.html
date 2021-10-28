@@ -7,15 +7,17 @@
 <main>
     <div class="account">
         <p class="user_name"></p>
-        <h3 class="subtitle_1">今までに使ったタグ</h3>
-        <div class="tag_group">
-            {% for i in list %}
-            {% for j in array %}
-            {% if i[j] %}
-            <a href="/search/{{ i[j] }}"><p class="content_tag">#{{ i[j] }}<p></a>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
+        <div class="tags_2">
+            <h3 class="subtitle_1">今までに使ったタグ</h3>
+            <div class="tag_group">
+                {% for i in list %}
+                {% for j in array %}
+                {% if i[j] %}
+                <a href="/search/{{ i[j] }}"><p class="content_tag">#{{ i[j] }}<p></a>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div class="articleiroduke">
