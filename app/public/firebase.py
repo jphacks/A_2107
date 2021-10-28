@@ -7,3 +7,9 @@ def initialize():
     firebase_admin.initialize_app(cred)
     db = firestore.client()
     return db
+
+docs=initialize().collection("article").stream()
+list=[]
+for doc in docs:
+    list.append(doc.to_dict()["title"])
+print(list)

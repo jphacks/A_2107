@@ -29,12 +29,35 @@ $(()=>{
             }
         })
         var a=0
+        var sortList=[]
         listed.forEach((i)=>{
-            $(".tags").append(
-                `<a href="/search/${i}"><p>#${i}(${countListed[a]}件)</p></a>`
-            )
+            sortList.push({tag:i,count:Number(countListed[a])})
             a++
         })
+        console.log(sortList)
+        setTimeout(() => {
+            sortList.sort(function(a, b) {
+                if (a.count < b.count) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            })
+            setTimeout(() => {
+                console.log(sortList);
+            }, 100);
+        }, 100);
+        setTimeout(() => {
+            var b=0
+            sortList.forEach((i)=>{
+                if(b<9){
+                    $(".tags").append(
+                        `<a href="/search/${i.tag}"><p class="content_tag">#${i.tag}(${String(i.count)}件)</p></a>`
+                    )
+                }
+                b++
+            })
+        }, 300);
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);

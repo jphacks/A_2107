@@ -6,5 +6,5 @@ const array = [
     { id: 2, name: 'Strawberry', price: 300 },
   ];
 
-  const sortArray = [...array].sort((a,b) => a.price - b.price);
+const sortArray = [...array].sort((a,b) => a.price - b.price);
 console.log(sortArray);

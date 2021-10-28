@@ -17,11 +17,32 @@ $(()=>{
         setTimeout(() => {
             list.forEach((i)=>{
                 i.points=(points[0]-i.points[0])**2+(points[1]-i.points[1])**2+(points[2]-i.points[2])**2
-                // i.points=10
             })
             list = [...list].sort((a,b) => a.points - b.points);
             setTimeout(() => {
                 list.forEach((i)=>{
+                    var match;
+                    if(i.points>77){
+                        match="ほとんどないです"
+                    }else if(i.points>62){
+                        match="10％以上です"
+                    }else if(i.points>52){
+                        match="20％以上です"
+                    }else if(i.points>43){
+                        match="30％以上です"
+                    }else if(i.points>36){
+                        match="40％以上です"
+                    }else if(i.points>28){
+                        match="50％以上です"
+                    }else if(i.points>21){
+                        match="60％以上です"
+                    }else if(i.points>16){
+                        match="70％以上です"
+                    }else if(i.points>9){
+                        match="80％以上です"
+                    }else{
+                        match="90％以上です"
+                    }
                     $("main").append(
                         `<div>
                         <p>${i.title}</p>
@@ -29,7 +50,7 @@ $(()=>{
                         <p>${i.term}</p>
                         <p>${i.sentence}</p>
                         <p>${i.tag}</p>
-                        <p>${i.points}</p>
+                        <p>性格の一致度は、<span style="color:red">${match}</span>。</p>
                         </div>`
                     )
                 }) 
