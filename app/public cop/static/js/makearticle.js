@@ -37,7 +37,7 @@ $(()=>{
                 time:date2
             })
             setTimeout(() => {
-                window.location.href = `/user/${username}`;
+                window.location.href = `/userpage/${username}`;
             }, 1000);
         }else if(tags.length==2){
             db.collection("article").add({
@@ -52,7 +52,7 @@ $(()=>{
                 time:date2
             })
             setTimeout(() => {
-                window.location.href = `/user/${username}`;
+                window.location.href = `/userpage/${username}`;
             }, 1000);
         }else if(tags.length==3){
             db.collection("article").add({
@@ -68,7 +68,7 @@ $(()=>{
                 time:date2
             })
             setTimeout(() => {
-                window.location.href = `/user/${username}`;
+                window.location.href = `/userpage/${username}`;
             }, 1000);
         }else if(tags.length==4){
             db.collection("article").add({
@@ -85,7 +85,7 @@ $(()=>{
                 time:date2
             })
             setTimeout(() => {
-                window.location.href = `/user/${username}`;
+                window.location.href = `/userpage/${username}`;
             }, 1000);
         }else if(tags.length==5){
             db.collection("article").add({
@@ -103,7 +103,7 @@ $(()=>{
                 time:date2
             })
             setTimeout(() => {
-                window.location.href = `/user/${username}`;
+                window.location.href = `/userpage/${username}`;
             }, 1000);
         }else{
         }

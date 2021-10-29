@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="../static/css/signup.css">
+<main>
+    <h1>SignUp</h1>
+    <h2>基本情報</h2>
+  <div class="question">
+    <p>メールアドレス</p>
+    <div class="choice">
+      <input type="text" id='mail' placeholder="mail">
+    </div>
+  </div>
+  <div class="question">
+    <p>パスワード</p>
+    <div class="choice">
+      <input type="password" id='pass' placeholder="password">
+    </div>
+  </div>
+  <div class="question">
+    <p>ユーザーネーム</p>
+    <div class="choice">
+      <input type="text" id="username" placeholder="username">
+    </div>
+  </div>
+  <h2 class="h2">アンケート(※必ず答える必要があります)</h2>
+    <div class="question"><label for="question-1"><p>家の中の物の配置を決めないと気が済まない</p></label>
+      <div class="choice">
+        <input type="radio" name="question-1" value="1"><span>そう思う</span>
+        <input type="radio" name="question-1" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-1" value="-1"><span>そう思わない</span>
+      </div>
+      </div>
+      
+      <div class="question"><label for="question-2"><p>平日寝る時間が一緒</p></label>
+      <div class="choice">
+        <input type="radio" name="question-2" value="1"><span>そう思う</span>
+        <input type="radio" name="question-2" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-2" value="-1"><span>そう思わない</span>
+      </div>
+      </div>
+      
+      <div class="question"><label for="question-3"><p>たくさんの趣味を持っている</p></label>
+      <div class="choice">
+        <input type="radio" name="question-3" value="1"><span>そう思う</span>
+        <input type="radio" name="question-3" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-3" value="-1"><span>そう思わない</span>
+      </div>
+      </div>
+      
+      <div class="question"><label for="question-4"><p>こだわりが強いと思う</p></label>
+      <div class="choice">
+        <input type="radio" name="question-4" value="2"><span>そう思う</span>
+        <input type="radio" name="question-4" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-4" value="-2"><span>そう思わない</span>
+      </div>
+    </div>
+      <div class="question"><label for="question-5"><p>用事がある時に準備を忘れない</p></label>
+      <div class="choice">
+        <input type="radio" name="question-5" value="2"><span>そう思う</span>
+        <input type="radio" name="question-5" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-5" value="-2"><span>そう思わない</span>
+      </div>
+    </div>
+      <div class="question"><label for="question-6"><p>一つのことにハマらない</p></label>
+      <div class="choice">
+        <input type="radio" name="question-6" value="-2"><span>そう思う</span>
+        <input type="radio" name="question-6" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-6" value="2"><span>そう思わない</span>
+      </div>
+    </div>
+      <div class="question"><label for="question-7"><p>カップラーメンはきっちり時間を測って食べる</p></label>
+      <div class="choice">
+        <input type="radio" name="question-7" value="1"><span>そう思う</span>
+        <input type="radio" name="question-7" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-7" value="-1"><span>そう思わない</span>
+      </div>
+    </div>
+      <div class="question"><label for="question-8"><p>ゴミは分別して捨てる</p></label>
+      <div class="choice">
+        <input type="radio" name="question-8" value="1"><span>そう思う</span>
+        <input type="radio" name="question-8" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-8" value="-1"><span>そう思わない</span>
+      </div>
+    </div>
+      <div class="question"><label for="question-9"><p>作業中にスマホを触りたくなる</p></label>
+      <div class="choice">
+        <input type="radio" name="question-9" value="1"><span>そう思う</span>
+        <input type="radio" name="question-9" value="0"><span>どちらとも言えない</span>
+        <input type="radio" name="question-9" value="-1"><span>そう思わない</span>
+      </div>
+  </div>
+  <button class="btn signUp">サインアップ</button>
+</main>
+<script src="../static/js/signup.js"></script>
+{% endblock %}

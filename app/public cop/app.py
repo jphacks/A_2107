@@ -1,9 +1,8 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template
 from werkzeug.utils import HTMLBuilder
 import firebase
 db=firebase.initialize()
-import requests
-import indexes
+import pprint
 
 app = Flask(__name__)
 
@@ -28,7 +27,7 @@ def signin():
     html=render_template("signin.html",title=title,sign=sign)
     return html
 
-@app.route("/user/<username>")
+@app.route("/userpage/<username>")
 def userpage(username):
     title="＠検索"
     list=[]
@@ -42,9 +41,8 @@ def userpage(username):
 
 @app.route("/search/<content>")
 def searchtag(content):
-    content=content
     title="＃検索"
-    html=render_template("searchtag.html",title=title,tagName=content)
+    html=render_template("searchtag.html",title=title)
     return html
 
 @app.route("/makearticle")
@@ -54,11 +52,10 @@ def makearticle():
     html=render_template("makearticle.html",title=title,sign=sign)
     return html
 
-@app.route("/index/<name>")
-def index(name):
-    name=name
+@app.route("/index")
+def index():
     title="index"
-    html=render_template("index.html",title=title,name=name)
+    html=render_template("index.html",title=title)
     return html
 
 @app.route("/fitway")
@@ -74,13 +71,6 @@ def article(articleID):
     if doc.exists:
         article=doc.to_dict()
     html=render_template("article.html",title=title,article=article)
-    return html
-
-@app.route("/post" ,methods=['POST'])
-def post():
-    list=indexes.findArticle(request.form["keyword"])
-    title="検索"
-    html=render_template("post.html",title=title,list=list)
     return html
 
 

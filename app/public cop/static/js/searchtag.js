@@ -1,9 +1,9 @@
 $(()=>{
     var pageURL=location.href
     var splitedURL=pageURL.split("/")
-    // var tagName=splitedURL[splitedURL.length-1]
+    var tagName=splitedURL[splitedURL.length-1]
     var uid,points;
-    pageShow=(points,tagName)=>{
+    pageShow=(points)=>{
         list=[]
         tagList=["tag1","tag2","tag3","tag4","tag5"]
         tagList.forEach((i)=>{
@@ -61,7 +61,7 @@ $(()=>{
                     $("main").append(
                         
                         `<div class="article">
-                        <a href="/user/${i.username}"><p>@${i.username}</p></a>
+                        <a href="/userpage/${i.username}"><p>@${i.username}</p></a>
                         <a href="/article/${i.articleID}"><h2>${i.title}</h2></a>
                         <p class="time">${i.time}</p>
                         <p>期間）${i.term}</p>
@@ -74,7 +74,7 @@ $(()=>{
             }, 100);
         }, 300);
     }
-    pageShowOther=(tagName)=>{
+    pageShowOther=()=>{
         list=[]
         tagList=["tag1","tag2","tag3","tag4","tag5"]
         tagList.forEach((i)=>{
@@ -120,7 +120,7 @@ $(()=>{
                     }
                     $("main").append(
                         `<div class="article">
-                        <a href="/user/${i.username}"><p>@${i.username}</p></a>
+                        <a href="/userpage/${i.username}"><p>@${i.username}</p></a>
                         <a href="/article/${i.articleID}"><h2>${i.title}</h2></a>
                         <p class="time">${i.time}</p>
                         <p>期間）${i.term}</p>
@@ -132,4 +132,17 @@ $(()=>{
             }, 100);
         }, 300);
     }
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            uid= user.uid;
+            db.collection("users").doc(uid).get().then((doc) => {
+                points=doc.data().points;
+                setTimeout(() => {
+                    pageShow(points)
+                }, 100);
+            })
+        }else{
+            pageShowOther()
+        }
+    });
 })

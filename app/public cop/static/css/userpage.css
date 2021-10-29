@@ -19,14 +19,13 @@ body {
 
 .account {
     width: 100%;
-    height: fit-content;
-    padding-bottom: 20px;
+    height: 20vh;
 }
 
 .user_name {
     font-size: 35px;
+    font-family: 'Irish Grover', cursive;
     display: inline-block;
-    font-family: 'Recursive', sans-serif;
     width: 30vh;
     margin: 0 0 0 40px;
 }
@@ -41,7 +40,9 @@ body {
 }
 
 .tag_group {
-    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -55,8 +56,7 @@ body {
     width: -moz-fit-content;
     width: fit-content;
     margin: 5px;
-    display: block;
-    float: left;
+    display: inline-block;
 }
   
  .content_tag:hover {
@@ -80,12 +80,12 @@ h3 {
     width: 50vw;
     margin: 0 auto;
     height: auto;
-    box-shadow: 3px 3px 3px #ddd;
+    border-bottom: 1px gray solid;
+    border-right: 1px gray solid;
     z-index: 2;
     background-color: white;
     padding: 20px;
     border-radius:10px;
-    margin-bottom: 15px;
 }
 
 .subtitle_2 {

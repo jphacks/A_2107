@@ -1,0 +1,81 @@
+body {
+  background-color: #fafafa;
+}
+
+.cover {
+  height: 7vh;
+}
+
+header .signin {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  font-size: 15px;
+  color: #0a7ec7;
+  padding: 0.3em 1em;
+  border: solid 2px #0a7ec7;
+  border-radius: 3px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  position: absolute;
+  top: 0;
+  right: 17vw;
+  margin: 15px;
+  background-color: white;
+}
+
+header .signin:hover {
+  background-color: #0a7ec7;
+  color: white;
+}
+
+header .signup {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  font-size: 15px;
+  color: #581ce4;
+  padding: 0.3em 1em;
+  border: solid 2px #581ce4;
+  border-radius: 3px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  position: absolute;
+  top: 0;
+  right: 23vw;
+  margin: 15px;
+  background-color: white;
+}
+
+header .signup:hover {
+  background-color: #581ce4;
+  color: white;
+}
+
+main {
+  width: 40vw;
+  margin: 0 auto;
+  padding-top: 3vh;
+  padding-bottom: 90vh;
+  background-color: white;
+}
+
+main .article {
+  padding: 15px;
+  border-bottom: solid 1px gray;
+}
+
+main .article h2 {
+  color: black;
+}
+
+main .article p {
+  color: black;
+}
+
+main .article .time {
+  color: gray;
+}
+/*# sourceMappingURL=search.css.map */
