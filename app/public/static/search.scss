@@ -1,0 +1,97 @@
+
+body{
+    background-color: rgb(250,250,250);
+}
+.cover{
+    height: 7vh;
+}
+header{
+    .signin {
+        width: fit-content;
+        display: inline-block;
+        font-size: 15px;
+        color: #0a7ec7;
+        padding: 0.3em 1em;
+        border: solid 2px #0a7ec7;
+        border-radius: 3px;
+        transition: .4s;
+        position: absolute;
+        top: 0;
+        right:17vw;
+        margin: 15px;
+        background-color: white;
+    }
+    
+    .signin:hover {
+        background-color: #0a7ec7;
+        color: white;
+    }
+    
+    .signup {
+        width: fit-content;
+        display: inline-block;
+        font-size: 15px;
+        color: #581ce4;
+        padding: 0.3em 1em;
+        border: solid 2px #581ce4;
+        border-radius: 3px;
+        transition: .4s;
+        position: absolute;
+        top: 0;
+        right: 23vw;
+        margin: 15px;
+        background-color: white;
+    }
+    
+    .signup:hover {
+        background-color: #581ce4;
+        color: white;
+    }
+}
+main{
+    
+    .article_group {
+        z-index: 2;
+        margin-top: 50px;
+        .article {
+            width: 50vw;
+            margin: 0 auto;
+            height: auto;
+            box-shadow: 2px 2px 5px #ddd;
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius:10px;            
+            .username {
+                font-size: 20px;
+                color: gray;
+                padding-left: 5px;
+                padding-top: 5px;
+                &hover {
+                    color: #0a7ec7;
+                    transition: all .3s 0s ease;
+                }
+                
+            }
+            h2{
+                color: black;
+            }
+            p{
+                color: black;
+            }
+            .tag {
+                color: #0a7ec7;
+            }
+            .time{
+                color: gray;
+                text-align: right;
+            }
+            .term {
+                line-height: 40px;
+            }
+            .sentence {
+                margin: 10px;
+            }
+        }
+    }
+}

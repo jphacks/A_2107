@@ -1,52 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
-<link rel="stylesheet" href="../static/css/search.css">
+<link rel="stylesheet" href="../static/css/searched.css">
 <main>
-    <a href='/user/{{ article["username"] }}'>
-        <p>{{ article["username"] }}</p>
-    </a>
-    <h2>{{ article["title"] }}</h2>
-    <p class="time">{{ article["time"] }}</p>
-    <p>期間）{{ article["term"] }}</p>
-    
-    <p　class="sentence">{{ article["sentence"] }}</p>
-    <p>
-        <span>
-            {% if article["tag1"] %}
-            <a href='/search/{{ article["tag1"]}}'>
-                #{{ article["tag1"]}}
+    <div class="article_group">
+        <div class="article">
+            <a  href='/user/{{ article["username"] }}'>
+                <p class="username">{{ article["username"] }}</p>
             </a>
-            {% endif %}
-        </span>
-        <span>
-            {% if article["tag2"] %}
-            <a href='/search/{{ article["tag2"]}}'>
-                #{{ article["tag2"]}}
-            </a>
-            {% endif %}
-        </span>
-        <span>
-            {% if article["tag3"] %}
-            <a href='/search/{{ article["tag3"]}}'>
-                #{{ article["tag3"]}}
-            </a>
-            {% endif %}
-        </span>
-        <span>
-            {% if article["tag4"] %}
-            <a href='/search/{{ article["tag4"]}}'>
-                #{{ article["tag4"]}}
-            </a>
-            {% endif %}
-        </span>
-        <span>
-            {% if article["tag5"] %}
-            <a href='/search/{{ article["tag5"]}}'>
-                #{{ article["tag5"]}}
-            </a>
-            {% endif %}
-        </span>
-    </p>
-    
+            <h2>{{ article["title"] }}</h2>
+            <p class="time">{{ article["time"] }}</p>
+            <p class="tag">
+                <span>
+                    {% if article["tag1"] %}
+                    <a href='/search/{{ article["tag1"]}}'>
+                        #{{ article["tag1"]}}
+                    </a>
+                    {% endif %}
+                </span>
+                <span>
+                    {% if article["tag2"] %}
+                    <a href='/search/{{ article["tag2"]}}'>
+                        #{{ article["tag2"]}}
+                    </a>
+                    {% endif %}
+                </span>
+                <span>
+                    {% if article["tag3"] %}
+                    <a href='/search/{{ article["tag3"]}}'>
+                        #{{ article["tag3"]}}
+                    </a>
+                    {% endif %}
+                </span>
+                <span>
+                    {% if article["tag4"] %}
+                    <a href='/search/{{ article["tag4"]}}'>
+                        #{{ article["tag4"]}}
+                    </a>
+                    {% endif %}
+                </span>
+                <span>
+                    {% if article["tag5"] %}
+                    <a href='/search/{{ article["tag5"]}}'>
+                        #{{ article["tag5"]}}
+                    </a>
+                    {% endif %}
+                </span>
+            </p>
+            <p class="term">期間）{{ article["term"] }}</p>
+            <div class="sentence">
+                <p　>{{ article["sentence"] }}</p>
+            </div>
+        </div>
+    </div>
 </main>
 {% endblock %}

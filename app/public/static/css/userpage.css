@@ -47,8 +47,8 @@ body {
     height: fit-content;
     margin: 0 auto;
     padding-top: 20px;
-  }
-  
+} 
+
 .content_tag {
     color: #2080F5;
     width: -webkit-fit-content;
@@ -58,8 +58,8 @@ body {
     display: block;
     float: left;
 }
-  
- .content_tag:hover {
+
+.content_tag:hover {
     text-decoration: underline;
     -webkit-text-decoration-color: #2080F5;
     text-decoration-color: #2080F5;
