@@ -1,6 +1,6 @@
 ### 製品名 
 # fitway
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2021/07/JPHACKS2021_ogp.jpg)](https://www.youtube.com/watch?v=LUPQFB4QyVo)
+[![IMAGE ALT TEXT HERE](スクリーンショット 2021-10-30 12.48.30.png)](https://youtu.be/z4c9IPusSA4)
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
@@ -50,7 +50,3 @@
 ### 独自技術
 #### ハッカソンで開発した独自機能・技術
 * ベクトルを用いた性格一致度の判定
-
-#### 製品に取り入れた研究内容（データ・ソフトウェアなど）（※アカデミック部門の場合のみ提出必須）
-* 
-* 

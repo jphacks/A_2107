@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="../static/css/signup.css">
+<main>
+  <h1>SignIn</h1>
+  <div class="question">
+    <p>メールアドレス</p>
+    <div class="choice"><input type="text" id='mail' placeholder="mail">
+    </div>
+  </div>
+  <div class="question">
+    <p>パスワード</p>
+    <div class="choice">
+      <input type="password" id='pass' placeholder="password">
+    </div>
+  </div>
+  <button class="btn signIn">サインイン</button>
+  
+</main>
+  <script src="../static/js/script.js"></script>
+{% endblock %}

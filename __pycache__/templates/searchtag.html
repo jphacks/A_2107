@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="../static/css/search.css">
+<main>
+</main>
+<script src="../static/js/searchtag.js"></script>
+<script>
+firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            uid= user.uid;
+            db.collection("users").doc(uid).get().then((doc) => {
+                points=doc.data().points;
+                setTimeout(() => {
+                    pageShow(points,"{{tagName}}")
+                }, 100);
+            })
+        }else{
+            pageShowOther("{{tagName}}")
+        }
+    });
+</script>
+{% endblock %}
