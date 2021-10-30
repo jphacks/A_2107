@@ -1,6 +1,6 @@
 ### 製品名 
 # fitway
-[![IMAGE ALT TEXT HERE](https://raw.github.com/wiki/sanji0219/A_2107/スクリーンショット 2021-10-30 12.48.30.png)](https://youtu.be/z4c9IPusSA4)
+[![IMAGE ALT TEXT HERE](https://raw.github.com/wiki/jphacks/A_2107/スクリーンショット 2021-10-30 12.48.30.png)](https://youtu.be/z4c9IPusSA4)
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
