@@ -40,7 +40,7 @@ def userpage(username):
     html=render_template("userpage.html",list=list,title=title,array=array)
     return html
 
-@app.route("/search/<content>")
+@app.route("/tag/<content>")
 def searchtag(content):
     content=content
     title="＃検索"
@@ -54,11 +54,10 @@ def makearticle():
     html=render_template("makearticle.html",title=title,sign=sign)
     return html
 
-@app.route("/index/<name>")
-def index(name):
-    name=name
-    title="index"
-    html=render_template("index.html",title=title,name=name)
+@app.route("/test")
+def test():
+    title="test"
+    html=render_template("test.html",title=title)
     return html
 
 @app.route("/fitway")
@@ -76,7 +75,7 @@ def article(articleID):
     html=render_template("article.html",title=title,article=article)
     return html
 
-@app.route("/post" ,methods=['POST'])
+@app.route("/search" ,methods=['POST'])
 def post():
     list=indexes.findArticle(request.form["keyword"])
     title="検索"
