@@ -48,7 +48,7 @@ $(()=>{
             sortList.forEach((i)=>{
                 if(b<10){
                     $(".tags").append(
-                        `<a href="/search/${i.tag}"><p class="content_tag">#${i.tag}(${String(i.count)}件)</p></a>`
+                        `<a href="/tag/${i.tag}"><p class="content_tag">#${i.tag}(${String(i.count)}件)</p></a>`
                     )
                 }
                 b++
