@@ -30,7 +30,7 @@ def signin():
 
 @app.route("/user/<username>")
 def userpage(username):
-    title="＠検索"
+    title="@"+username
     list=[]
     array=["tag1","tag2","tag3","tag4","tag5"]
     docs =db.collection("article").where('username', '==', username).stream()
@@ -43,7 +43,7 @@ def userpage(username):
 @app.route("/tag/<content>")
 def searchtag(content):
     content=content
-    title="＃検索"
+    title="#"+content
     html=render_template("searchtag.html",title=title,tagName=content)
     return html
 
@@ -78,7 +78,7 @@ def article(articleID):
 @app.route("/search" ,methods=['POST'])
 def post():
     list=indexes.findArticle(request.form["keyword"])
-    title="検索"
+    title="「"+request.form["keyword"]+"」の検索結果"
     html=render_template("post.html",title=title,list=list)
     return html
 
